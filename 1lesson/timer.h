@@ -14,12 +14,10 @@ public:
 	timer(): start(std::chrono::steady_clock::now()) {}
 	~timer()
 	{
-		if (f)
-		{
+		if (f){
 			std::cout << std::chrono::duration_cast<T>(std::chrono::steady_clock::now() - start).count() + past << std::endl;
 		}
-		else
-		{
+		else{
 			std::cout << past << std::endl;
 		}
 	}
@@ -32,8 +30,7 @@ public:
 
 	void resume()
 	{
-		if (!f)
-		{
+		if (!f){
 			start = std::chrono::steady_clock::now();
 			f = true;
 		}
